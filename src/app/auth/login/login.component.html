@@ -1,3 +1,41 @@
-<p>
-  login works!
-</p>
+<main>
+  <mat-card>
+    <form [formGroup]="form">
+
+      <mat-form-field>
+        <input
+          matInput
+          class="auth-email"
+          type="email"
+          name="email"
+          required
+          formControlName="email"
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          class="auth-password"
+          type="password"
+          name="password"
+          required
+          formControlName="password"
+        >
+      </mat-form-field>
+
+    <div class="actions">
+
+      <button
+        mat-raised-button
+        color="primary"
+        [(disabled)]="!form.valid"
+        (click)="onSubmit()">
+        Login
+      </button>
+      
+    </div>
+
+    </form>
+  </mat-card>
+</main>
