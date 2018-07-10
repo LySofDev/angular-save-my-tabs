@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared.module';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
@@ -8,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule
   ],
   exports: [
     LoginComponent
