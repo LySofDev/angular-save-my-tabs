@@ -8,6 +8,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { HomeModule } from './home/home.module';
+import { TabsModule } from './tabs/tabs.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     AuthModule,
     UsersModule,
-    HomeModule
+    HomeModule,
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
