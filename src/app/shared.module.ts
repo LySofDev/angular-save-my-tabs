@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatToolbarModule,
   MatFormFieldModule,
@@ -9,6 +10,11 @@ import {
   MatPaginatorModule,
   MatSnackBarModule
 } from '@angular/material';
+
+const FormModules = [
+  FormsModule,
+  ReactiveFormsModule,
+];
 
 const MaterialComponents = [
   MatFormFieldModule,
@@ -23,9 +29,11 @@ const MaterialComponents = [
 @NgModule({
   imports: [
     CommonModule,
+    ...FormModules,
     ...MaterialComponents
   ],
   exports: [
+    ...FormModules,
     ...MaterialComponents
   ],
   declarations: []
