@@ -1,0 +1,16 @@
+main {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 30vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
