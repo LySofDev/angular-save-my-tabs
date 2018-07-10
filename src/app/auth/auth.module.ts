@@ -3,21 +3,22 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
-    AuthGuard,
-    RoleGuard
+    LoginComponent
   ],
   declarations: [
-    AuthGuard,
-    RoleGuard
+    LoginComponent
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard,
+    RoleGuard,
   ]
 })
 export class AuthModule { }

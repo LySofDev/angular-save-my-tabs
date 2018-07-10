@@ -14,9 +14,12 @@ const FormModules = [
     ...FormModules,
     BrowserAnimationsModule
   ],
-  declarations: [
+  exports: [
     ...FormModules,
     BrowserAnimationsModule
+  ],
+  declarations: [
+
   ]
 })
 export class CoreModule { }
