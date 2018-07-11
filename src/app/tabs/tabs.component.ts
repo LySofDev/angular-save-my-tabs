@@ -12,6 +12,7 @@ import { Tab } from './tab';
 })
 export class TabsComponent implements OnInit {
   page: Page = { count: 5, offset: 1 };
+  pageSizeOptions: number[] = [ 5, 10, 15, 20, 25 ];
   count: number = 0;
   tabs: Tab[] = [];
 
@@ -31,7 +32,7 @@ export class TabsComponent implements OnInit {
   }
 
   updateCurrentPage(nextPage: PageEvent) {
-    this.page = { count: this.page.count, offset: nextPage.pageIndex + 1 };
+    this.page = { count: nextPage.pageSize, offset: nextPage.pageIndex + 1 };
     this.getTabsFromService();
   }
 

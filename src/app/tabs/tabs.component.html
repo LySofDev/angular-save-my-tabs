@@ -2,6 +2,13 @@
   <mat-paginator
     [length]="count"
     [pageSize]="page.count"
+    [pageSizeOptions]="pageSizeOptions"
     (page)="pageEvent = $event; updateCurrentPage(pageEvent)"
   ></mat-paginator>
+</div>
+
+<div class="tabs-list" *ngIf="tabs.length > 0">
+  <div *ngFor="let tab of tabs">
+    {{ tab.url }}
+  </div>
 </div>
