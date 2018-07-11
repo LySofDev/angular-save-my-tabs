@@ -16,8 +16,8 @@
       </div>
     </mat-card-content>
 
-    <mat-card-actions>
-      <div class="actions" *ngIf="expanded">
+    <mat-card-actions *ngIf="expanded">
+      <div class="actions">
 
         <button
           mat-raised-button
@@ -30,7 +30,7 @@
           color="warn">
           Delete
         </button>
-        
+
       </div>
     </mat-card-actions>
 
