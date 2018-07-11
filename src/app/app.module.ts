@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { HomeModule } from './home/home.module';
 import { TabsModule } from './tabs/tabs.module';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TabsModule } from './tabs/tabs.module';
     AuthModule,
     UsersModule,
     HomeModule,
-    TabsModule
+    TabsModule,
+    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
