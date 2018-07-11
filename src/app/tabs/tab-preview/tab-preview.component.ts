@@ -32,7 +32,7 @@ export class TabPreviewComponent implements OnInit {
   }
 
   goToEditTab() {
-    this.router.navigate([`/tab/${this.tab.id}/edit`]);
+    this.router.navigate([`/tabs/${this.tab.id}/edit`]);
   }
 
 }

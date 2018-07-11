@@ -5,6 +5,7 @@ import { TabsComponent } from './tabs.component';
 import { TabsService } from './tabs.service';
 import { TabPreviewComponent } from './tab-preview/tab-preview.component';
 import { EditTabComponent } from './edit-tab/edit-tab.component';
+import { NewTabComponent } from './new-tab/new-tab.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { EditTabComponent } from './edit-tab/edit-tab.component';
   ],
   exports: [
     TabsComponent,
-    EditTabComponent
+    EditTabComponent,
+    NewTabComponent
   ],
   providers: [
     TabsService
@@ -21,7 +23,8 @@ import { EditTabComponent } from './edit-tab/edit-tab.component';
   declarations: [
     TabsComponent,
     TabPreviewComponent,
-    EditTabComponent
+    EditTabComponent,
+    NewTabComponent
   ]
 })
 export class TabsModule { }
