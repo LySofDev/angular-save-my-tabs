@@ -18,3 +18,7 @@ export interface GetTabResponse extends Tab {
 export interface UpdateTabResponse extends Tab {
 
 }
+
+export interface CreateTabResponse extends Tab {
+
+}

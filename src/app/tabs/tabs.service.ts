@@ -6,8 +6,8 @@ import { environment } from '../../environments/environment';
 import { AuthService } from '../auth/auth.service';
 import { Tab } from './tab';
 import { Page } from './page';
-import { GetTabsRequest, DestroyTabRequest, GetTabRequest, UpdateTabRequest } from './tabs.requests';
-import { GetTabsResponse, DestroyTabResponse, GetTabResponse, UpdateTabResponse } from './tabs.responses';
+import { GetTabsRequest, DestroyTabRequest, GetTabRequest, UpdateTabRequest, CreateTabRequest } from './tabs.requests';
+import { GetTabsResponse, DestroyTabResponse, GetTabResponse, UpdateTabResponse, CreateTabResponse } from './tabs.responses';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +62,17 @@ export class TabsService {
       map((response: UpdateTabResponse) => response),
       catchError(_ => of(null))
     );
+  }
+
+  createTab(request: CreateTabRequest): Observable<Tab> {
+    return this.http.post(
+      `${environment.apiUrl}/tabs`,
+      { tab: request },
+      { headers: this.auth.getAuthorizedHeaders() }
+    ).pipe(
+      map((response: CreateTabResponse) => response),
+      catchError(_ => of(null))
+    )
   }
 
 }

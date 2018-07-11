@@ -14,5 +14,12 @@ export interface GetTabRequest {
 }
 
 export interface UpdateTabRequest extends Partial<Tab> {
+  id: number;
+  title?: string;
+  url?: string;
+}
 
+export interface CreateTabRequest extends Partial<Tab> {
+  title?: string;
+  url: string;
 }

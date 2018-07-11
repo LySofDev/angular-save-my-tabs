@@ -5,7 +5,7 @@
       <div class="content">
 
         <a href="{{ tab.url }}" target="_blank" class="title">
-          <span *ngIf="!tab.title || tab.title.length === 0">{{ tab.url }}</span>
+          <span *ngIf="!tab.title || tab.title.length === 0">{{ tab.url | removeProtocol }}</span>
           <span *ngIf="tab.title && tab.title.length > 0">{{ tab.title }}</span>
         </a>
 
