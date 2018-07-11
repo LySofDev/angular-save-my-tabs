@@ -5,6 +5,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 import { LoginComponent } from './login/login.component';
+import { TokenService } from './token.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     AuthService,
+    TokenService,
     AuthGuard,
     RoleGuard,
   ]

@@ -10,6 +10,7 @@ import { UsersModule } from './users/users.module';
 import { HomeModule } from './home/home.module';
 import { TabsModule } from './tabs/tabs.module';
 import { HeaderModule } from './header/header.module';
+import { CookiesModule } from './cookies/cookies.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderModule } from './header/header.module';
     HomeModule,
     TabsModule,
     HeaderModule,
+    CookiesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

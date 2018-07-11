@@ -1,4 +1,5 @@
-export interface LoginResponse {
-  prefix: string;
-  token: string;
+import { Token } from './token';
+
+export interface LoginResponse extends Token {
+
 }

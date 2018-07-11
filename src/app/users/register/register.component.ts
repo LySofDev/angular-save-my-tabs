@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
       password: this.form.get('password').value,
       passwordConfirmation: this.form.get('passwordConfirmation').value
     }).subscribe((success: boolean) => {
+      console.log("LOGGED IN");
       if (success) {
         const email = this.auth.userAsPrincipal().email;
         this.flash.open(`Signed up successfully as ${email}.`, 'Ok');
