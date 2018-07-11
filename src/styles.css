@@ -4,3 +4,20 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.standard-form {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 30vh;
+}
+
+.standard-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-form .actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
