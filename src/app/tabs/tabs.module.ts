@@ -4,6 +4,7 @@ import { SharedModule } from '../shared.module';
 import { TabsComponent } from './tabs.component';
 import { TabsService } from './tabs.service';
 import { TabPreviewComponent } from './tab-preview/tab-preview.component';
+import { EditTabComponent } from './edit-tab/edit-tab.component';
 
 @NgModule({
   imports: [
@@ -11,14 +12,16 @@ import { TabPreviewComponent } from './tab-preview/tab-preview.component';
     SharedModule
   ],
   exports: [
-    TabsComponent
+    TabsComponent,
+    EditTabComponent
   ],
   providers: [
     TabsService
   ],
   declarations: [
     TabsComponent,
-    TabPreviewComponent
+    TabPreviewComponent,
+    EditTabComponent
   ]
 })
 export class TabsModule { }

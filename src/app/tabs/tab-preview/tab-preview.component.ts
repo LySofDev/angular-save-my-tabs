@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { TabsService } from '../tabs.service';
 import { Tab } from '../tab';
 
@@ -13,7 +14,8 @@ export class TabPreviewComponent implements OnInit {
   expanded: boolean = false;
 
   constructor(
-    private tabsService: TabsService
+    private tabsService: TabsService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,10 @@ export class TabPreviewComponent implements OnInit {
     this.tabsService.destroyTab({ id: this.tab.id }).subscribe((success: boolean) => {
       if (success) this.refreshTabs();
     });
+  }
+
+  goToEditTab() {
+    this.router.navigate([`/tab/${this.tab.id}/edit`]);
   }
 
 }
