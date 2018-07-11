@@ -6,3 +6,7 @@ export interface GetTabsResponse {
   page: Page;
   tabs: Tab[];
 }
+
+export interface DestroyTabResponse {
+  success: boolean;
+}

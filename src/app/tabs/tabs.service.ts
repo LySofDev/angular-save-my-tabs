@@ -6,8 +6,8 @@ import { environment } from '../../environments/environment';
 import { AuthService } from '../auth/auth.service';
 import { Tab } from './tab';
 import { Page } from './page';
-import { GetTabsRequest } from './tabs.requests';
-import { GetTabsResponse } from './tabs.responses';
+import { GetTabsRequest, DestroyTabRequest } from './tabs.requests';
+import { GetTabsResponse, DestroyTabResponse } from './tabs.responses';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,16 @@ export class TabsService {
         tabs: [],
         page: { count: 5, offset: 1 }
       }))
+    );
+  }
+
+  destroyTab(request: DestroyTabRequest): Observable<boolean> {
+    return this.http.delete(
+      `${environment.apiUrl}/tabs/${request.id}`,
+      { headers: this.auth.getAuthorizedHeaders() }
+    ).pipe(
+      map((response: DestroyTabResponse) => response.success),
+      catchError(_ => of(false))
     );
   }
 
