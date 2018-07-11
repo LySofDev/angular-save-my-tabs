@@ -6,8 +6,8 @@ import { environment } from '../../environments/environment';
 import { AuthService } from '../auth/auth.service';
 import { Tab } from './tab';
 import { Page } from './page';
-import { GetTabsRequest, DestroyTabRequest } from './tabs.requests';
-import { GetTabsResponse, DestroyTabResponse } from './tabs.responses';
+import { GetTabsRequest, DestroyTabRequest, GetTabRequest, UpdateTabRequest } from './tabs.requests';
+import { GetTabsResponse, DestroyTabResponse, GetTabResponse, UpdateTabResponse } from './tabs.responses';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,27 @@ export class TabsService {
     ).pipe(
       map((response: DestroyTabResponse) => true),
       catchError(_ => of(false))
+    );
+  }
+
+  getTab(request: GetTabRequest): Observable<Tab> {
+    return this.http.get(
+      `${environment.apiUrl}/tabs/${request.id}`,
+      { headers: this.auth.getAuthorizedHeaders() }
+    ).pipe(
+      map((response: GetTabResponse) => response),
+      catchError(_ => of(null))
+    );
+  }
+
+  updateTab(request: UpdateTabRequest): Observable<Tab> {
+    return this.http.patch(
+      `${environment.apiUrl}/tabs/${request.id}`,
+      { tab: request },
+      { headers: this.auth.getAuthorizedHeaders() }
+    ).pipe(
+      map((response: UpdateTabResponse) => response),
+      catchError(_ => of(null))
     );
   }
 

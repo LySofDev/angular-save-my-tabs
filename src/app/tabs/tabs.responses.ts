@@ -10,3 +10,11 @@ export interface GetTabsResponse {
 export interface DestroyTabResponse {
   success?: boolean;
 }
+
+export interface GetTabResponse extends Tab {
+
+}
+
+export interface UpdateTabResponse extends Tab {
+
+}

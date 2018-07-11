@@ -1,3 +1,47 @@
-<p>
-  edit-tab works!
-</p>
+<main class="standard-form">
+  <mat-card *ngIf="loaded">
+
+    <mat-card-title>Edit Tab</mat-card-title>
+
+    <form [formGroup]="form">
+
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Title"
+          formControlName="title"
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          required
+          placeholder="URL"
+          formControlName="url"
+        >
+      </mat-form-field>
+
+      <div class="actions">
+
+        <button
+          mat-raised-button
+          [(disabled)]="form.pristine || !form.valid"
+          (click)="onSubmit()"
+          color="primary">
+          Update
+        </button>
+
+        <button
+          mat-button
+          (click)="goBackToTabs()"
+          color="warn">
+          Back
+        </button>
+
+      </div>
+    </form>
+  </mat-card>
+</main>
