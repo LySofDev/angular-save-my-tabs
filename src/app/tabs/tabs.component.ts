@@ -11,8 +11,8 @@ import { Tab } from './tab';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
-  page: Page = { count: 5, offset: 1 };
-  pageSizeOptions: number[] = [ 5, 10, 15, 20, 25 ];
+  page: Page = { count: 10, offset: 1 };
+  pageSizeOptions: number[] = [ 10, 15, 20, 25, 30 ];
   count: number = 0;
   tabs: Tab[] = [];
 
