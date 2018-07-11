@@ -21,4 +21,12 @@ export class HeaderComponent {
       this.router.navigate(['/home']);
     }
   }
+
+  goToNewTab() {
+    this.router.navigate(['/tabs/new']);
+  }
+
+  userIsAuthenticated(): boolean {
+    return this.auth.userIsAuthenticated();
+  }
 }
