@@ -1,8 +1,11 @@
 <mat-toolbar color="primary">
   <header>
+
     <span (click)="goToHome()">Save My Tabs</span>
+
     <a (click)="goToNewTab()" *ngIf="userIsAuthenticated()">
       <mat-icon [inline]="true">add</mat-icon>
     </a>
+    
   </header>
 </mat-toolbar>
