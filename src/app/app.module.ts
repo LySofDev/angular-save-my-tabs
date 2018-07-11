@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './/shared.module';
-import { CoreModule } from './/core.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
@@ -18,8 +19,9 @@ import { CookiesModule } from './cookies/cookies.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
-    CoreModule,
     AppRoutingModule,
     AuthModule,
     UsersModule,

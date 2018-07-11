@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { tap, map, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
+import { AuthService } from '../auth/auth.service';
+import { Tab } from './tab';
+import { Page } from './page';
+import { GetTabsRequest } from './tabs.requests';
+import { GetTabsResponse } from './tabs.responses';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TabsService {
+
+  constructor(
+    private http: HttpClient,
+    private auth: AuthService
+  ) { }
+
+  getTabs(request: GetTabsRequest): Observable<GetTabsResponse> {
+    return this.http.get(
+      `${environment.apiUrl}/tabs?offset=${request.offset}&count=${request.count}`,
+      { headers: this.auth.getAuthorizedHeaders() }
+    ).pipe(
+      map((response: GetTabsResponse) => response),
+      catchError(_ => of({
+        count: 0,
+        tabs: [],
+        page: { count: 5, offset: 1 }
+      }))
+    );
+  }
+
+}

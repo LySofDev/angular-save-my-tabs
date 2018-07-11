@@ -1,3 +1,7 @@
-<p>
-  tabs works!
-</p>
+<div class="paginator">
+  <mat-paginator
+    [length]="count"
+    [pageSize]="page.count"
+    (page)="pageEvent = $event; updateCurrentPage(pageEvent)"
+  ></mat-paginator>
+</div>
