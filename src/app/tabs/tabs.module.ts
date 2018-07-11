@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared.module';
 import { TabsComponent } from './tabs.component';
 import { TabsService } from './tabs.service';
+import { TabPreviewComponent } from './tab-preview/tab-preview.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TabsService } from './tabs.service';
     TabsService
   ],
   declarations: [
-    TabsComponent
+    TabsComponent,
+    TabPreviewComponent
   ]
 })
 export class TabsModule { }

@@ -9,6 +9,6 @@
 
 <div class="tabs-list" *ngIf="tabs.length > 0">
   <div *ngFor="let tab of tabs">
-    {{ tab.url }}
+    <tab-preview [tab]="tab"></tab-preview>
   </div>
 </div>

@@ -1,0 +1,29 @@
+.tab-preview {
+  margin: 0.5em 0.5em;
+}
+
+.title {
+  color: black;
+  text-decoration: none;
+  width: 80%;
+  flex-basis: 90%;
+}
+
+.content {
+  display: flex;
+}
+
+.more-button {
+  font-size: 24px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  flex-basis: 10%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3em;
+  margin-bottom: 1em;
+}

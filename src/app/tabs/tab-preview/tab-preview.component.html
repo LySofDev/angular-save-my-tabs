@@ -1,0 +1,38 @@
+<article class="tab-preview">
+  <mat-card>
+
+    <mat-card-content>
+      <div class="content">
+
+        <a href="{{ tab.url }}" target="_blank" class="title">
+          <span *ngIf="!tab.title || tab.title.length === 0">{{ tab.url }}</span>
+          <span *ngIf="tab.title && tab.title.length > 0">{{ tab.title }}</span>
+        </a>
+
+        <div class="more-button" (click)="toggleExpandedActions()">
+          <mat-icon [inline]="true">more_vert</mat-icon>
+        </div>
+
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div class="actions" *ngIf="expanded">
+
+        <button
+          mat-raised-button
+          color="accent">
+          Edit
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn">
+          Delete
+        </button>
+        
+      </div>
+    </mat-card-actions>
+
+  </mat-card>
+</article>

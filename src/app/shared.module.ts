@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+  MatExpansionModule,
+  MatIconModule,
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
@@ -23,7 +25,9 @@ const MaterialComponents = [
   MatCardModule,
   MatToolbarModule,
   MatPaginatorModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatIconModule,
+  MatExpansionModule
 ];
 
 @NgModule({
