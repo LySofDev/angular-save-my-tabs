@@ -38,7 +38,7 @@ export class TabsService {
       `${environment.apiUrl}/tabs/${request.id}`,
       { headers: this.auth.getAuthorizedHeaders() }
     ).pipe(
-      map((response: DestroyTabResponse) => response.success),
+      map((response: DestroyTabResponse) => true),
       catchError(_ => of(false))
     );
   }

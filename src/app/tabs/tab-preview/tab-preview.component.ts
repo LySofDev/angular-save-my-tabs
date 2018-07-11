@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TabsService } from '../tabs.service';
 import { Tab } from '../tab';
 
 @Component({
@@ -8,15 +9,24 @@ import { Tab } from '../tab';
 })
 export class TabPreviewComponent implements OnInit {
   @Input() tab: Tab;
+  @Input() refreshTabs: () => {};
   expanded: boolean = false;
 
-  constructor() { }
+  constructor(
+    private tabsService: TabsService
+  ) { }
 
   ngOnInit() {
   }
 
   toggleExpandedActions() {
     this.expanded = !this.expanded;
+  }
+
+  destroyTabWithService() {
+    this.tabsService.destroyTab({ id: this.tab.id }).subscribe((success: boolean) => {
+      if (success) this.refreshTabs();
+    });
   }
 
 }

@@ -9,6 +9,9 @@
 
 <div class="tabs-list" *ngIf="tabs.length > 0">
   <div *ngFor="let tab of tabs">
-    <tab-preview [tab]="tab"></tab-preview>
+    <tab-preview
+      [refreshTabs]="refreshTabs(this)"
+      [tab]="tab">
+    </tab-preview>
   </div>
 </div>

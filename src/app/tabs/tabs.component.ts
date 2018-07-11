@@ -31,6 +31,10 @@ export class TabsComponent implements OnInit {
     });
   }
 
+  refreshTabs(parent: TabsComponent): () => void {
+    return () => { parent.getTabsFromService(); }
+  }
+
   updateCurrentPage(nextPage: PageEvent) {
     this.page = { count: nextPage.pageSize, offset: nextPage.pageIndex + 1 };
     this.getTabsFromService();

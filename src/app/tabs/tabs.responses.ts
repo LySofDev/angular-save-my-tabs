@@ -8,5 +8,5 @@ export interface GetTabsResponse {
 }
 
 export interface DestroyTabResponse {
-  success: boolean;
+  success?: boolean;
 }
