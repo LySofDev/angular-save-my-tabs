@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { Principal } from './principal';
 
 @Injectable({
-  // providedIn: AuthModule
   providedIn: 'root'
 })
-export class RoleGuard implements CanActivate {
+export class NoAuthGuard implements CanActivate {
 
   constructor(
     private auth: AuthService,
@@ -17,14 +15,14 @@ export class RoleGuard implements CanActivate {
   ) {}
 
   /**
-  * Redirect non-admin users to the login route
+  * Redirect unauthenticated uses to the login route
   */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (!this.auth.userIsAuthenticated() || this.auth.userAsPrincipal().role !== "admin") {
-      this.router.navigate(['/home']);
+    if (this.auth.userIsAuthenticated()) {
+      this.router.navigate(['/tabs']);
       return false;
     }
 
