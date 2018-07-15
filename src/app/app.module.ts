@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { TabsModule } from './tabs/tabs.module';
 import { HeaderModule } from './header/header.module';
 import { CookiesModule } from './cookies/cookies.module';
+import { SplashModule } from './splash/splash.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CookiesModule } from './cookies/cookies.module';
     TabsModule,
     HeaderModule,
     CookiesModule,
+    SplashModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

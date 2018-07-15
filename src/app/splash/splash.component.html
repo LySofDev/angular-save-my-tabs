@@ -1,0 +1,7 @@
+<div *ngIf="loaded">
+  <ng-content></ng-content>
+</div>
+
+<div *ngIf="!loaded" class="splash-screen">
+  <mat-spinner></mat-spinner>
+</div>
