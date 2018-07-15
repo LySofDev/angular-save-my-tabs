@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatusService } from './status.service';
 
 @Component({
   selector: 'splash-screen',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class SplashComponent implements OnInit {
   loaded: boolean = false;
 
-  constructor() { }
+  constructor(
+    private status: StatusService,
+  ) { }
 
   ngOnInit() {
+    this.status.healthCheck().subscribe((success: boolean) => {
+      this.loaded = success;
+    });
   }
 
 }
