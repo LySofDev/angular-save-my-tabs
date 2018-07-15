@@ -29,4 +29,10 @@ export class HeaderComponent {
   userIsAuthenticated(): boolean {
     return this.auth.userIsAuthenticated();
   }
+
+  signOutUser() {
+    this.auth.signOutUser();
+    this.router.navigate(['/login']);
+  }
+
 }

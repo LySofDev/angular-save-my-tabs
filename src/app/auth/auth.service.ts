@@ -57,4 +57,8 @@ export class AuthService {
     );
   }
 
+  signOutUser() {
+    this.storedToken.clear();
+  }
+
 }

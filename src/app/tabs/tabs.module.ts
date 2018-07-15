@@ -7,6 +7,7 @@ import { TabPreviewComponent } from './tab-preview/tab-preview.component';
 import { EditTabComponent } from './edit-tab/edit-tab.component';
 import { NewTabComponent } from './new-tab/new-tab.component';
 import { RemoveProtocolPipe } from './remove-protocol.pipe';
+import { NewTabButtonComponent } from './new-tab-button/new-tab-button.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { RemoveProtocolPipe } from './remove-protocol.pipe';
   exports: [
     TabsComponent,
     EditTabComponent,
-    NewTabComponent
+    NewTabComponent,
+    NewTabButtonComponent
   ],
   providers: [
     TabsService
@@ -26,7 +28,8 @@ import { RemoveProtocolPipe } from './remove-protocol.pipe';
     TabPreviewComponent,
     EditTabComponent,
     NewTabComponent,
-    RemoveProtocolPipe
+    RemoveProtocolPipe,
+    NewTabButtonComponent
   ]
 })
 export class TabsModule { }
