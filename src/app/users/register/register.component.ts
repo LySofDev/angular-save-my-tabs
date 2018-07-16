@@ -69,4 +69,8 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  isDisabled(): boolean {
+    return !this.form.valid;
+  }
+
 }

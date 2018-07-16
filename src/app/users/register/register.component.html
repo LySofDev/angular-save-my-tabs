@@ -42,7 +42,7 @@
       <button
         mat-raised-button
         color="primary"
-        [(disabled)]="!form.valid"
+        [disabled]="isDisabled()"
         (click)="onSubmit()">
         Register
       </button>

@@ -57,4 +57,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
+  isDisabled(): boolean {
+    return !this.form.valid;
+  }
+
 }

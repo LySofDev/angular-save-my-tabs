@@ -28,7 +28,7 @@
 
         <button
           mat-raised-button
-          [(disabled)]="form.pristine || !form.valid"
+          [disabled]="isDisabled()"
           (click)="onSubmit()"
           color="primary">
           Update

@@ -55,4 +55,8 @@ export class EditTabComponent implements OnInit {
     this.router.navigate(['/tabs']);
   }
 
+  isDisabled(): boolean {
+    return this.form.pristine || !this.form.valid;
+  }
+
 }

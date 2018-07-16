@@ -3,7 +3,7 @@
     [length]="count"
     [pageSize]="page.count"
     [pageSizeOptions]="pageSizeOptions"
-    (page)="pageEvent = $event; updateCurrentPage(pageEvent)"
+    (page)="updateCurrentPage($event)"
   ></mat-paginator>
 </div>
 

@@ -48,4 +48,8 @@ export class NewTabComponent implements OnInit {
     return url;
   }
 
+  isDisabled(): boolean {
+    return !this.form.valid;
+  }
+  
 }
