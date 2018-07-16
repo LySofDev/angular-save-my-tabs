@@ -11,7 +11,7 @@ import { Tab } from '../tab';
   styleUrls: ['./new-tab.component.css']
 })
 export class NewTabComponent implements OnInit {
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private fb: FormBuilder,

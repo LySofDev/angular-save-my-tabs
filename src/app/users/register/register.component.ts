@@ -12,7 +12,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private flash: MatSnackBar,

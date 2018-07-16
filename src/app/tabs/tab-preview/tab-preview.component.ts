@@ -9,9 +9,9 @@ import { Tab } from '../tab';
   styleUrls: ['./tab-preview.component.css']
 })
 export class TabPreviewComponent implements OnInit {
-  @Input() tab: Tab;
-  @Input() refreshTabs: () => {};
-  expanded: boolean = false;
+  @Input() public tab: Tab;
+  @Input() public refreshTabs: () => {};
+  public expanded: boolean = false;
 
   constructor(
     private tabsService: TabsService,

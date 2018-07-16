@@ -12,9 +12,9 @@ import { Tab } from '../tab';
   styleUrls: ['./edit-tab.component.css']
 })
 export class EditTabComponent implements OnInit {
-  id: number;
-  loaded: boolean = false;
-  form: FormGroup;
+  public id: number;
+  public loaded: boolean = false;
+  public form: FormGroup;
 
   constructor(
     private fb: FormBuilder,

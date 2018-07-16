@@ -7,7 +7,7 @@ import { StatusService } from './status.service';
   styleUrls: ['./splash.component.css']
 })
 export class SplashComponent implements OnInit {
-  loaded: boolean = false;
+  public loaded: boolean = false;
 
   constructor(
     private status: StatusService,
