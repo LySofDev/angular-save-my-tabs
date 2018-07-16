@@ -71,8 +71,11 @@ export class TabsService {
       { headers: this.auth.getAuthorizedHeaders() }
     ).pipe(
       map((response: CreateTabResponse) => response),
-      catchError(_ => of(null))
-    )
+      catchError((error: any) => {
+        console.log(error);
+        return of(null);
+      })
+    );
   }
 
 }

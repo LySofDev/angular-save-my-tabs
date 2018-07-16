@@ -43,8 +43,9 @@ export class NewTabComponent implements OnInit {
 
   sanitizeUrl(url: string): string {
     if (!url.startsWith('http')) {
-      return `http://${url}`;
+      url = `http://${url}`;
     }
+    return url;
   }
 
 }

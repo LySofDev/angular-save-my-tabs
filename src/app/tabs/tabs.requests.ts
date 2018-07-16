@@ -19,7 +19,7 @@ export interface UpdateTabRequest extends Partial<Tab> {
   url?: string;
 }
 
-export interface CreateTabRequest extends Partial<Tab> {
+export interface CreateTabRequest {
   title?: string;
   url: string;
 }
