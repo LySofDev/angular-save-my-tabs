@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm start
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/save-my-tabs
