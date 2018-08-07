@@ -1,5 +1,5 @@
 describe('My First Test', () => {
   it('Does nothing', () => {
-    expect(true).to.equal(false);
+    cy.visit("http://localhost:4200");
   });
 });
