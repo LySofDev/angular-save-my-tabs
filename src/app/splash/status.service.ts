@@ -16,7 +16,6 @@ export class StatusService {
   ) { }
 
   healthCheck(): Observable<boolean> {
-    // return of(true);
     return this.http.get(`${environment.apiUrl}/status`).pipe(
       map(_ => true),
       catchError((error: any) => {
