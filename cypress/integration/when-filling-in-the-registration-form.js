@@ -9,19 +9,27 @@ describe("when filling in the registration form", () => {
   });
 
   describe("with an invalid email", () => {
-    it("will remain disabled");
-  });
-
-  describe("with an invalid password", () => {
-    it("will remain disabled");
+    it("will remain disabled", () => {
+      cy.get("#email-field").type("   ")
+      cy.get("#password-field").type("password");
+      cy.get("#password-confirmation-field").type("password");
+    });
   });
 
   describe('with an invalid password confirmation', () => {
-    it("will remain disabled");
+    it("will remain disabled", () => {
+      cy.get("#email-field").type("mac.hdz@gmail.com")
+      cy.get("#password-field").type("password");
+      cy.get("#password-confirmation-field").type("invalid");
+    });
   });
 
   describe("with valid user information", () => {
-    it("will not remain disabled");
+    it("will not remain disabled", () => {
+      cy.get("#email-field").type("mac.hdz@gmail.com")
+      cy.get("#password-field").type("password");
+      cy.get("#password-confirmation-field").type("password");
+    });
   });
 
 });
