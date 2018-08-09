@@ -3,26 +3,26 @@ services:
 ################################################################################
 # Web Client
 ################################################################################
-  angular:
+  web-client:
     build:
-      context: .
+      context: ./web-client-v1
       dockerfile: Dockerfile
     command: npm start
     ports:
       - "4200:4200"
     volumes:
-      - .:/save-my-tabs
+      - ./web-client-v1:/save-my-tabs
     environment:
       - API_URL=http://localhost:3000
     depends_on:
-      - api
+      - tabs-api
 ################################################################################
-# Records Database
+# Tabs Database
 ################################################################################
-  db:
+  tabs-db:
     image: postgres:10.4-alpine
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
     volumes:
       - ./tmp/db:/var/lib/potgresql/data
     environment:
@@ -30,18 +30,20 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=pgdev
 ################################################################################
-# Service API
+# Tabs API
 ################################################################################
-  api:
+  tabs-api:
     build:
-      context: ./dev-api-server
+      context: ./tabs-api-v1
       dockerfile: Dockerfile
     command: bin/dev
     volumes:
-      - ./dev-api-server:/save-my-tabs
+      - ./tabs-api-v1:/save-my-tabs
       - type: tmpfs
         target: /save-my-tabs/tmp/pids
-    ports:
-      - "3000:3000"
+    environment:
+      - SECRET_KEY_BASE=qwertyuiopasdfghjklzxcvbnm123456
+    # ports:
+    #   - "3000:3000"
     depends_on:
-      - db
+      - tabs-db
