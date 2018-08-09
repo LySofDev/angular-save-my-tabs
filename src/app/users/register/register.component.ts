@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     this.users.registerWith({
       email: this.form.get('email').value,
       password: this.form.get('password').value,
-      passwordConfirmation: this.form.get('passwordConfirmation').value
+      confirmation: this.form.get('passwordConfirmation').value
     }).subscribe((success: boolean) => {
       console.log("LOGGED IN");
       if (success) {

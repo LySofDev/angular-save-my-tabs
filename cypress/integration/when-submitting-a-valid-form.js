@@ -6,7 +6,7 @@ describe("when submitting a valid form", () => {
     cy.viewport(MOBILE_WIDTH, MOBILE_HEIGHT);
     cy.visit(APP_URL);
     cy.get('#redirect-to-register').click();
-    cy.get("#email-field").type("test.user@gmail.com")
+    cy.get("#email-field").type("test.user1@gmail.com")
     cy.get("#password-field").type("password");
     cy.get("#password-confirmation-field").type("password");
   });

@@ -5,7 +5,7 @@ export interface GetUserRequest {
 export interface CreateUserRequest {
   email: string;
   password: string;
-  passwordConfirmation: string;
+  confirmation: string;
 }
 
 export interface UpdateUserRequest {

@@ -20,18 +20,16 @@ export class UsersService {
   ) { }
 
   registerWith(request: CreateUserRequest): Observable<boolean> {
-    return this.http.post(
-      `${environment.apiUrl}/users`,
-      { user: request }
-    ).pipe(
-      // tap((response: CreateUserResponse) => {
-      //   console.log("RESPONDED");
-      //   console.log(response);
-      // }),
-      tap((response: CreateUserResponse) => this.storedToken.store(response)),
-      map(_ => true),
-      catchError((error: any) => of(false))
-    );
+    return this.http.post(`${environment.apiUrl}/users`, {
+      data: {
+        type: "users",
+        attributes: {...request}
+      }
+    }).pipe(
+        tap((response: CreateUserResponse) => this.storedToken.store(response)),
+        map(_ => true),
+        catchError((error: any) => of(false))
+      );
   }
 
 }
