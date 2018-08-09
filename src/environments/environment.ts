@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://save-my-tabs-api.herokuapp.com/"
-  // apiUrl: "http://localhost:3000"
+  // apiUrl: "https://save-my-tabs-api.herokuapp.com/"
+  apiUrl: "http://localhost:3000"
 };
 
 /*

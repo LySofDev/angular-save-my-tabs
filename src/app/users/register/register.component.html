@@ -42,12 +42,17 @@
       <button
         mat-raised-button
         color="primary"
+        id="register-button"
         [disabled]="isDisabled()"
         (click)="onSubmit()">
         Register
       </button>
 
-      <a mat-button color="accent" (click)="goToLogin()">
+      <a
+        mat-button
+        color="accent"
+        id="redirect-to-login"
+        (click)="goToLogin()">
         Login
       </a>
     </div>
